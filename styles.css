@@ -30,10 +30,6 @@ body {
     text-decoration: none;
   }
   
-  main {
-    padding: 20px;
-  }
-  
   footer {
     background-color: #333;
     color: #fff;
@@ -44,30 +40,69 @@ body {
     bottom: 0;
   }
   
-  /* Home Page Styles */
-  .intro {
-    text-align: center;
+  /* Home Page Layout */
+  .home-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
   }
   
+  .left-section {
+    flex: 1;
+    margin-right: 20px;
+  }
+  
+  .right-section {
+    flex: 1;
+    margin-left: 20px;
+  }
+  
+  /* Portrait Styles */
   .portrait {
-    width: 150px;
-    height: 150px;
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
+    margin-top: 50px;
+    margin-left: 150px;
     margin-bottom: 20px;
   }
   
-  .skills {
+  /* Social Icons Styles */
+  .social-icons {
     margin-top: 20px;
   }
   
-  .skills ul {
+  .social-icons a {
+    text-decoration: none;
+    color: #333;
+    font-size: 24px;
+    margin-right: 15px;
+    transition: color 0.3s ease;
+  }
+  
+  .social-icons a:hover {
+    color: #0077b5; /* LinkedIn blue */
+  }
+  
+  .social-icons a:nth-child(2):hover {
+    color: #333; /* GitHub black */
+  }
+  
+  .social-icons a:nth-child(3):hover {
+    color: #d44638; /* Email red */
+  }
+  
+  /* Skills List Styles */
+  .right-section ul {
     list-style-type: none;
     padding: 0;
   }
   
-  .skills ul li {
+  .right-section ul li {
     background-color: #e2e2e2;
-    margin: 5px 0;
+    margin: 10px 0;
     padding: 10px;
     border-radius: 5px;
   }
@@ -85,17 +120,18 @@ body {
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   }
-
-  .dark-mode {
-    background-color: #333;
-    color: #fff;
-  }
   
-  .dark-mode .skills ul li {
-    background-color: #444;
-  }
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .home-container {
+      flex-direction: column;
+    }
   
-  .dark-mode .project {
-    background-color: #444;
-    color: #fff;
+    .left-section, .right-section {
+      margin: 0;
+    }
+  
+    .right-section {
+      margin-top: 20px;
+    }
   }
