@@ -4,7 +4,7 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background: linear-gradient(135deg, #f4f4f4, #e2e2e2);
     color: #333;
   }
   
@@ -13,6 +13,10 @@ body {
     color: #fff;
     padding: 1rem 0;
     text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   }
   
   nav ul {
@@ -28,6 +32,14 @@ body {
   nav ul li a {
     color: #fff;
     text-decoration: none;
+    padding: 5px 10px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  nav ul li a:hover {
+    background-color: #0077b5;
+    color: #fff;
+    border-radius: 5px;
   }
   
   footer {
@@ -47,26 +59,34 @@ body {
     padding: 20px;
     max-width: 1200px;
     margin: 0 auto;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
   }
   
   .left-section {
     flex: 1;
     margin-right: 20px;
+    padding: 20px;
   }
   
   .right-section {
     flex: 1;
     margin-left: 20px;
+    padding: 20px;
   }
   
-  /* Portrait Styles */
   .portrait {
     width: 200px;
     height: 200px;
     border-radius: 50%;
-    margin-top: 50px;
-    margin-left: 150px;
     margin-bottom: 20px;
+    transition: transform 0.3s ease;
+  }
+  
+  .portrait:hover {
+    transform: scale(1.05);
   }
   
   /* Social Icons Styles */
@@ -83,80 +103,85 @@ body {
   }
   
   .social-icons a:hover {
-    color: #0077b5; /* LinkedIn blue */
+    color: #0077b5;
   }
   
   .social-icons a:nth-child(2):hover {
-    color: #333; /* GitHub black */
+    color: #333;
   }
   
   .social-icons a:nth-child(3):hover {
-    color: #d44638; /* Email red */
+    color: #d44638;
   }
   
- /* Skill Section Styles */
-.skill-category {
-    margin-bottom: 40px; /* Increased margin for better spacing */
+  /* Skill Section Styles */
+  .skill-category {
+    margin-bottom: 40px;
   }
   
   .skill-category h3 {
-    font-size: 1.75rem; /* Larger heading */
-    margin-bottom: 15px; /* More space below the heading */
+    font-size: 1.75rem;
+    margin-bottom: 15px;
     color: #333;
   }
   
   .skill-icons {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px; /* Increased space between icons */
+    gap: 20px;
   }
   
   .skill-icons a {
     text-decoration: none;
     color: #333;
-    font-size: 3rem; /* Larger icons (3x the default size) */
+    font-size: 3.5rem;
     transition: color 0.3s ease, transform 0.3s ease;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 80px; /* Fixed width for each icon container */
-    height: 80px; /* Fixed height for each icon container */
-    border-radius: 10px; /* Rounded corners */
-    background-color: #f4f4f4; /* Light background for each icon */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    width: 90px;
+    height: 90px;
+    border-radius: 10px;
+    background-color: #f4f4f4;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: relative;
   }
   
   .skill-icons a:hover {
-    color: #0077b5; /* Change color on hover */
-    transform: scale(1.1); /* Slightly enlarge on hover */
-    background-color: #e2e2e2; /* Change background on hover */
+    color: #0077b5;
+    transform: scale(1.1);
+    background-color: #e2e2e2;
   }
   
-  /* Specific icon colors (optional) */
-  .skill-icons .fa-java:hover {
-    color: #007396; /* Java blue */
+  /* Tooltip effect */
+  .skill-icons a::after {
+    content: attr(title);
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
   }
   
-  .skill-icons .fa-html5:hover {
-    color: #e34c26; /* HTML orange */
-  }
-  
-  .skill-icons .fa-css3-alt:hover {
-    color: #264de4; /* CSS blue */
-  }
-  
-  .skill-icons .fa-bootstrap:hover {
-    color: #7952b3; /* Bootstrap purple */
-  }
-  
-  .skill-icons .fa-git-alt:hover {
-    color: #f05032; /* Git red */
+  .skill-icons a:hover::after {
+    opacity: 1;
   }
   
   /* Experience Page Styles */
   .experience {
     max-width: 800px;
     margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
   }
   
   .project {
@@ -165,6 +190,12 @@ body {
     margin-bottom: 20px;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .project:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   }
   
   /* Responsive Design */
@@ -180,4 +211,39 @@ body {
     .right-section {
       margin-top: 20px;
     }
+  
+    .portrait {
+      margin-left: 0;
+      margin-top: 20px;
+    }
+  }
+  
+  /* Dark Mode Styles */
+  .dark-mode {
+    background: linear-gradient(135deg, #333, #222);
+    color: #fff;
+  }
+  
+  .dark-mode header {
+    background-color: #222;
+  }
+  
+  .dark-mode .home-container,
+  .dark-mode .experience {
+    background-color: #444;
+    color: #fff;
+  }
+  
+  .dark-mode .project {
+    background-color: #555;
+    color: #fff;
+  }
+  
+  .dark-mode .skill-icons a {
+    background-color: #555;
+    color: #fff;
+  }
+  
+  .dark-mode .skill-icons a:hover {
+    background-color: #666;
   }
