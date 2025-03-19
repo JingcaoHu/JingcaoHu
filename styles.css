@@ -94,17 +94,63 @@ body {
     color: #d44638; /* Email red */
   }
   
-  /* Skills List Styles */
-  .right-section ul {
-    list-style-type: none;
-    padding: 0;
+ /* Skill Section Styles */
+.skill-category {
+    margin-bottom: 40px; /* Increased margin for better spacing */
   }
   
-  .right-section ul li {
-    background-color: #e2e2e2;
-    margin: 10px 0;
-    padding: 10px;
-    border-radius: 5px;
+  .skill-category h3 {
+    font-size: 1.75rem; /* Larger heading */
+    margin-bottom: 15px; /* More space below the heading */
+    color: #333;
+  }
+  
+  .skill-icons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Increased space between icons */
+  }
+  
+  .skill-icons a {
+    text-decoration: none;
+    color: #333;
+    font-size: 3rem; /* Larger icons (3x the default size) */
+    transition: color 0.3s ease, transform 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px; /* Fixed width for each icon container */
+    height: 80px; /* Fixed height for each icon container */
+    border-radius: 10px; /* Rounded corners */
+    background-color: #f4f4f4; /* Light background for each icon */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  }
+  
+  .skill-icons a:hover {
+    color: #0077b5; /* Change color on hover */
+    transform: scale(1.1); /* Slightly enlarge on hover */
+    background-color: #e2e2e2; /* Change background on hover */
+  }
+  
+  /* Specific icon colors (optional) */
+  .skill-icons .fa-java:hover {
+    color: #007396; /* Java blue */
+  }
+  
+  .skill-icons .fa-html5:hover {
+    color: #e34c26; /* HTML orange */
+  }
+  
+  .skill-icons .fa-css3-alt:hover {
+    color: #264de4; /* CSS blue */
+  }
+  
+  .skill-icons .fa-bootstrap:hover {
+    color: #7952b3; /* Bootstrap purple */
+  }
+  
+  .skill-icons .fa-git-alt:hover {
+    color: #f05032; /* Git red */
   }
   
   /* Experience Page Styles */
