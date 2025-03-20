@@ -1,6 +1,6 @@
 // Dark Mode Toggle
 const toggleButton = document.createElement('button');
-toggleButton.innerText = 'Toggle Dark Mode';
+toggleButton.innerText = 'Dark Mode';
 document.body.appendChild(toggleButton);
 
 toggleButton.addEventListener('click', () => {
